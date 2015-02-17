@@ -11,7 +11,6 @@ __email__ =     "tomislav.sablic@outlook.com"
 __status__ =    "Development" 
 
 ######################## Twitter API auth ##############################
-# This is how your API credentials should look in config.py file
 consumer_key    =     'xxxxxxxxxxxxxxxxxxxx'
 consumer_secret =     'xxxxxxxxxxxxxxxxxxxx'
 access_token    =     'xxxxxxxxxxxxxxxxxxxx'
@@ -19,10 +18,10 @@ access_token_secret = 'xxxxxxxxxxxxxxxxxxxx'
 appuser =             'xxxxxxxxxxxxxxxxxxxx'
 ########################################################################
 
-hostname = "nope.gif" # Put your domain here
+hostname = config.hostname
 time_now = datetime.now().strftime('%H:%M')
 status = ""
-alert = "Something is going on with %s ,you better check it." % hostname
+alert = config.alert
 
 def ping():  
   response = os.system("ping -n 1 " + hostname)
