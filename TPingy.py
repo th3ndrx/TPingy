@@ -10,14 +10,6 @@ __version__ =   "1.0"
 __email__ =     "tomislav.sablic@outlook.com"
 __status__ =    "Development" 
 
-######################## Twitter API auth ##############################
-consumer_key    =     'xxxxxxxxxxxxxxxxxxxx'
-consumer_secret =     'xxxxxxxxxxxxxxxxxxxx'
-access_token    =     'xxxxxxxxxxxxxxxxxxxx'
-access_token_secret = 'xxxxxxxxxxxxxxxxxxxx'
-appuser =             'xxxxxxxxxxxxxxxxxxxx'
-########################################################################
-
 hostname = config.hostname
 time_now = datetime.now().strftime('%H:%M')
 status = ""
