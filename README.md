@@ -1,6 +1,6 @@
 # TPingy
 
-A simple tool sends you direct message when your Twitter account.
+A simple tool sends you direct message to your Twitter account when your site is offline.
 You can either send yourself DM or you can make a new TW account for your app.
 
 ### Dependencies
