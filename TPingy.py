@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os, sys, time, tweepy
+import config
 from datetime import datetime
 
 __author__ =    "Tomislav Sablic"
@@ -10,6 +11,7 @@ __email__ =     "tomislav.sablic@outlook.com"
 __status__ =    "Development" 
 
 ######################## Twitter API auth ##############################
+# This is how your API credentials should look in config.py file
 consumer_key    =     'xxxxxxxxxxxxxxxxxxxx'
 consumer_secret =     'xxxxxxxxxxxxxxxxxxxx'
 access_token    =     'xxxxxxxxxxxxxxxxxxxx'
@@ -40,12 +42,12 @@ def ping():
     
   
 def TWnotify():
-  auth = tweepy.OAuthHandler(consumer_key, consumer_secret) # Making a new session
-  auth.set_access_token(access_token, access_token_secret)
+  auth = tweepy.OAuthHandler(config.consumer_key, config.consumer_secret) # Making a new session
+  auth.set_access_token(config.access_token, config.access_token_secret)
   api = tweepy.API(auth)
   print "\n" + "+" * 50 + "\n"
   print time_now + "    Successfully logged in as " + api.me().name
-  api.send_direct_message(user_id = appuser , text = alert)
+  api.send_direct_message(user_id = config.appuser , text = alert)
   print "\t Message successfully sent."
   print "\n" + "+" * 50 + "\n"
   sys.exit() # Closing the command line, if this script executed locally
