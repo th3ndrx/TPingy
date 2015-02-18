@@ -41,6 +41,7 @@ def TWnotify():
   api.send_direct_message(user_id = config.appuser , text = alert)
   print "\t Message successfully sent."
   print "\n" + "+" * 50 + "\n"
+  status = "ok"
   sys.exit() # Closing the command line, if this script executed locally
   
 
