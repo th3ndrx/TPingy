@@ -45,3 +45,6 @@ Temporary Items
 # Python config files
 config.py
 *.pyc
+
+# To do file
+todo.txt
