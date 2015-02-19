@@ -15,7 +15,11 @@ time_now = datetime.now().strftime('%H:%M')
 status = ""
 alert = config.alert
 
-def ping():  
+def sleep(x):
+  time.sleep(x*60)
+
+def ping():
+  print "Checking for website availability..."
   response = os.system("ping -n 1 " + hostname)
   print "\n" + "-" * 50 + "\n"
   if response == 0:
@@ -23,13 +27,14 @@ def ping():
     status = 'ok'
     sys.exit()
     print "\n" + "-" * 50 + "\n"    
-    time.sleep(300) # Wait for 5 minutes
+    sleep(1) # Wait for 5 minutes
   else:
     print time_now + "\t" + hostname, 'is down!'
     status = 'error'
     print "\n" + "-" * 50 + "\n"
     TWnotify()
-  
+    continue_operation = raw_input("Do you want to continue monitoring? (y/n): ")
+    continue_operation.upper()
     
   
 def TWnotify():
@@ -42,9 +47,11 @@ def TWnotify():
   print "\t Message successfully sent."
   print "\n" + "+" * 50 + "\n"
   status = "ok"
-  sys.exit() # Closing the command line, if this script executed locally
+  #sys.exit() # Closing the command line, if this script executed locally
   
 
 ping()
+
 while status == 'ok':
+  if continue_operation == "N": break
   ping()
